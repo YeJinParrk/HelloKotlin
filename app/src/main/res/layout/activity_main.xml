@@ -25,4 +25,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnJava" />
+
+    <Button
+        android:id="@+id/btnVarJava"
+        android:layout_width="149dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:text="VIEW BINDING-JAVA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnKotlin" />
+
+    <Button
+        android:id="@+id/btnVarKotlin"
+        android:layout_width="156dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="24dp"
+        android:text="VIEW BINDING-KOTLIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnKotlin" />
 </androidx.constraintlayout.widget.ConstraintLayout>
