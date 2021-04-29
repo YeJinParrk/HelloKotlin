@@ -12,9 +12,10 @@ import java.util.Locale;
 
 public class VariableJavaActivity extends AppCompatActivity {
     int clickCount;
-    TextView txtActivityStartTime, txtCountBtnClicks;
+    TextView txtActivityStartTime,txtCountBtnClicks, txtElapsedTime;
     Button btnClickMe;
     final long startTime = System.currentTimeMillis();
+    long elapsedSeconds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class VariableJavaActivity extends AppCompatActivity {
         txtActivityStartTime = findViewById(R.id.txtActivityStartTime);
         txtCountBtnClicks = findViewById(R.id.txtCountBtnClicks);
         btnClickMe = findViewById(R.id.btnClickMe);
+        txtElapsedTime = findViewById(R.id.txtElapsedTime);
 
         clickCount = 0;
         /*startTime = System.currentTimeMillis();*/
@@ -31,11 +33,13 @@ public class VariableJavaActivity extends AppCompatActivity {
         btnClickMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickCount++;
-                txtCountBtnClicks.setText("Button clicks = " +clickCount);
+                elapsedSeconds = (long) ((System.currentTimeMillis() - startTime) / 1000.0);
+                clickCount ++;
+                txtCountBtnClicks.setText("Button clicks: " + clickCount);
+                txtElapsedTime.setText( elapsedSeconds + " seconds Elapsed");
             }
         });
         String sTimeStamp = new SimpleDateFormat("HH:mm:ss", Locale.KOREA).format(startTime);
-        txtActivityStartTime.setText("Activity start time = " +sTimeStamp);
+        txtActivityStartTime.setText("Activity start time = " + sTimeStamp);
     }
 }
